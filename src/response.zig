@@ -82,10 +82,6 @@ pub const FinalTranscript = struct {
     text_formatted: ?bool,
 
     pub fn fromJson(json_string: []const u8, allocator: std.mem.Allocator) !FinalTranscript {
-        // var stream = std.json.TokenStream.init(json_string);
-        // const value = try std.json.parse(allocator, &stream, .{ .ignore_unknown_fields = true });
-        // defer value.deinit();
-
         const parsed = try std.json.parseFromSlice(
             FinalTranscript,
             allocator,
